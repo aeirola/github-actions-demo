@@ -1,0 +1,25 @@
+name: Intro to GitHub Actions
+
+on: [push]
+
+jobs:
+  title:
+    name: 'Title'
+    runs-on: ubuntu-latest    
+    steps:
+    - name: Title
+      run: |
+        echo '
+          GitHub Actions Demo
+          
+          An exploration from the perspective of a web developer
+          
+          by: Axel Havukangas
+        '
+    - name: Table of contents
+      run: |
+        echo '
+          - What are actions, and how do they compare to other services?
+          - Building npm packages?
+          - Building docker images?
+        '
