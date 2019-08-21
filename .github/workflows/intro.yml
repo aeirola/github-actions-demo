@@ -1,6 +1,9 @@
 name: Intro to GitHub Actions
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   title:
