@@ -77,10 +77,11 @@ jobs:
         echo "
           - The whole thing is in beta, so there aren't that many shared actions yet
             - That will probably change soon
+          - Not always clear whether to use a lot of actions or just some shell commands
           - They just changed the syntax for workflows, so all examples are outdated
           - Some cool actions could be:
             - NPM build-test-publush boilerplate on new tags
-            - Fastlane React Native builds
+            - Multiplatform React Native builds and tests
         "
     - name: Package repositories
       run: |
@@ -89,6 +90,7 @@ jobs:
           - Basically own npm, docker, etc. repos
           - Probably useless for open source projects
           - But quite nice for private things so that you don't need to pay separately for them
+          - Couldn't get it to work though
         "
     - name: Logs
       run: |
@@ -109,7 +111,7 @@ jobs:
         echo "
           - Yeah, most likely
           - Feels nicer than Travis. (Poor Travis)
-          - Although I wonder how long they can keep this completely free
+          - Although I wonder how long this will be free
         "
     - name: Conclusion
       run: |
