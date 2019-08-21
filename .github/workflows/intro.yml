@@ -4,12 +4,12 @@ on: [push]
 
 jobs:
   title:
-    name: 'Title'
+    name: Title
     runs-on: ubuntu-latest    
     steps:
     - name: Title
       run: |
-        echo '
+        echo "
           GitHub Actions Demo
           -------------------
 
@@ -23,32 +23,32 @@ jobs:
             by: Axel Havukangas
 
 
-        '
+        "
     - name: Table of Contents
       run: |
-        echo '
+        echo "
           - Introduction to GitHub Actions
           - Building npm packages?
           - Building docker images?
           - Thoughts
-        '
+        "
   intro:
-    name: 'Introduction'
+    name: Introduction
     runs-on: ubuntu-latest
     steps:
     - name: What is GitHub Actions?
       run: |
-        echo '
+        echo "
           - GitHubs new CI/CD feature for running code on repository activity
           - Currently in limited public Beta
           - Supports Linux, macOS and Windows runtimes
           - So not docker based
           - I have the feeling that Microsoft is somehow behind this
           - Apparently, it is also a handy tool for writing weeklies presentations!
-        '
+        "
     - name: Is it the same as TravisCI?
       run: |
-        echo '
+        echo "
           - In short, Yes!
           - Even the YAML syntax is heavily inspired by Travis
           - But there are some cool things:
@@ -56,71 +56,73 @@ jobs:
             - Directly available in GitHub
             - Integrates with all GitHub webhooks, such as issues and releases
               - And enables writing back to GitHub, such as comments and labels
-        '
+        "
     - name: And GitLab CI and Bitbucket Pipelines?
       run: |
-        echo '
+        echo "
           - In short: Yes!
           - But GitHub is the defacto opensource repository
           - Who would make a PR for a npm package hosted elsewhere?
-        '
-
+        "
   thoughts:
-    name: 'Thoughts'
+    name: Thoughts    
     runs-on: ubuntu-latest
     steps:
     - name: Actions
       run: |
-        echo '
+        echo "
           - The whole thing is in beta, so there aren't that many shared actions yet
             - That will probably change soon
           - They just changed the syntax for workflows, so all examples are outdated
           - Some cool actions could be:
             - NPM build-test-publush boilerplate on new tags
             - Fastlane React Native builds
-        '
+        "
     - name: Package repositories
       run: |
-        echo '
-          - The whole thing is in beta, so there aren't that many shared actions yet
-            - That will probably change soon
-          - They just changed the syntax for workflows, so all examples are outdated
-        '
+        echo "
+          - GitHub also recently introduced package repositories
+          - Basically own npm, docker, etc. repos
+          - Probably useless for open source projects
+          - But quite nice for private things so that you don't need to pay separately for them
+        "
     - name: Logs
       run: |
-        echo '
+        echo "
           - You can link to specific log lines, which is kind of nice
           - But you can't search the whole logs, without separately opening each job 
-        '
+        "
     - name: Random things
       run: |
-        echo '
+        echo "
           - The workflow syntax seems quite powerful, with some conditionals and expressions
             - Wouldn't be suprised if it was Turing complete
           - Haven't looked into writing my own custom actions yet
             - Maybe a separate talk for that?
-        '
+        "
     - name: Would I use it?
       run: |
-        echo '
+        echo "
           - Yeah, most likely
           - Feels nicer than Travis. (Poor Travis)
           - Although I wonder how long they can keep this completely free
-        '
+        "
     - name: Conclusion
       run: |
-        echo '
+        echo "
           - Hope they get out of Beta soon
           - Hope the community for actions grows soon
+          - I guess users are quite excited about this
+          - But I wonder how many existing services are getting pissed about Microsoft stepping on their toes
           - Thanks Microsoft
-        '
+        "
   questions:
-    name: 'Questions'
+    name: Questions
     runs-on: ubuntu-latest    
     steps:
     - name: Questions
       run: |
-        echo '
+        echo "
           Questions?
           ----------
-        '
+        "
