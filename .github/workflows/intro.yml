@@ -11,15 +11,53 @@ jobs:
       run: |
         echo '
           GitHub Actions Demo
-          
-          An exploration from the perspective of a web developer
-          
-          by: Axel Havukangas
+          -------------------
+
+
+          An exploration
+
+          from the perspective of a web developer
+
+
+
+            by: Axel Havukangas
+
+
         '
-    - name: Table of contents
+    - name: Table of Contents
       run: |
         echo '
-          - What are actions, and how do they compare to other services?
+          - Introduction to GitHub Actions
           - Building npm packages?
           - Building docker images?
+        '
+  intro:
+    name: 'Introduction'
+    runs-on: ubuntu-latest
+    steps:
+    - name: What is GitHub Actions?
+      run: |
+        echo '
+          - GitHubs new CI/CD feature for running code on repository activity
+          - Currently in limited public Beta
+          - Supports Linux, macOS and Windows runtimes
+          - So not docker based
+          - I have the feeling that Microsoft is somehow behind this
+          - Apparently, it is also a handy tool for writing weeklies presentations!
+        '
+    - name: Is it the same as TravisCI?
+      run: |
+        echo '
+          - In short, Yes!
+          - Even the YAML syntax is heavily inspired by Travis
+          - But there are some cool things:
+            - Reusable and shareable actions (written in Docker or JS)
+            - Directly available in GitHub
+        '
+    - name: What about GitLab CI and Bitbucket Pipelines?
+      run: |
+        echo '
+          - In short: Yes!
+          - But GitHub is the defacto opensource repository
+          - Who would make a PR for a npm package hosted elsewhere?
         '
