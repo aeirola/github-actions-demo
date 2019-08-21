@@ -47,6 +47,7 @@ jobs:
           - Supports Linux, macOS and Windows runtimes
           - So not docker based
           - I have the feeling that Microsoft is somehow behind this
+            - There is at least a lot of TypeScript in the repos
           - Apparently, it is also a handy tool for writing weeklies presentations!
         "
     - name: Is it the same as TravisCI?
