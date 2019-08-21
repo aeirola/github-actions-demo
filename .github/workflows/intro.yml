@@ -72,7 +72,7 @@ jobs:
     name: Thoughts    
     runs-on: ubuntu-latest
     steps:
-    - name: Actions
+    - name: Shared actions
       run: |
         echo "
           - The whole thing is in beta, so there aren't that many shared actions yet
@@ -90,7 +90,7 @@ jobs:
           - Basically own npm, docker, etc. repos
           - Probably useless for open source projects
           - But quite nice for private things so that you don't need to pay separately for them
-          - Couldn't get it to work though
+          - Couldn't get it to work though with environment GITHUB_TOKEN
         "
     - name: Logs
       run: |
@@ -103,6 +103,7 @@ jobs:
         echo "
           - The workflow syntax seems quite powerful, with some conditionals and expressions
             - Wouldn't be suprised if it was Turing complete
+          - Although, unclear how to easily only publish on master branch
           - Haven't looked into writing my own custom actions yet
             - Maybe a separate talk for that?
           - No cache support
@@ -118,7 +119,7 @@ jobs:
     - name: Conclusion
       run: |
         echo "
-          - Hope they get out of Beta soon
+          - Hope they get out of Beta soon, or open to all
           - Hope the community for actions grows soon
           - I guess users are quite excited about this
           - But I wonder how many existing services are getting pissed about Microsoft stepping on their toes
