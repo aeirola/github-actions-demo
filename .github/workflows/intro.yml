@@ -30,6 +30,7 @@ jobs:
           - Introduction to GitHub Actions
           - Building npm packages?
           - Building docker images?
+          - Thoughts
         '
   intro:
     name: 'Introduction'
@@ -53,11 +54,73 @@ jobs:
           - But there are some cool things:
             - Reusable and shareable actions (written in Docker or JS)
             - Directly available in GitHub
+            - Integrates with all GitHub webhooks, such as issues and releases
+              - And enables writing back to GitHub, such as comments and labels
         '
-    - name: What about GitLab CI and Bitbucket Pipelines?
+    - name: And GitLab CI and Bitbucket Pipelines?
       run: |
         echo '
           - In short: Yes!
           - But GitHub is the defacto opensource repository
           - Who would make a PR for a npm package hosted elsewhere?
+        '
+
+  thoughts:
+    name: 'Thoughts'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Actions
+      run: |
+        echo '
+          - The whole thing is in beta, so there aren't that many shared actions yet
+            - That will probably change soon
+          - They just changed the syntax for workflows, so all examples are outdated
+          - Some cool actions could be:
+            - NPM build-test-publush boilerplate on new tags
+            - Fastlane React Native builds
+        '
+    - name: Package repositories
+      run: |
+        echo '
+          - The whole thing is in beta, so there aren't that many shared actions yet
+            - That will probably change soon
+          - They just changed the syntax for workflows, so all examples are outdated
+        '
+    - name: Logs
+      run: |
+        echo '
+          - You can link to specific log lines, which is kind of nice
+          - But you can't search the whole logs, without separately opening each job 
+        '
+    - name: Random things
+      run: |
+        echo '
+          - The workflow syntax seems quite powerful, with some conditionals and expressions
+            - Wouldn't be suprised if it was Turing complete
+          - Haven't looked into writing my own custom actions yet
+            - Maybe a separate talk for that?
+        '
+    - name: Would I use it?
+      run: |
+        echo '
+          - Yeah, most likely
+          - Feels nicer than Travis. (Poor Travis)
+          - Although I wonder how long they can keep this completely free
+        '
+    - name: Conclusion
+      run: |
+        echo '
+          - Hope they get out of Beta soon
+          - Hope the community for actions grows soon
+          - Thanks Microsoft
+        '
+  questions:
+    name: 'Questions'
+    runs-on: ubuntu-latest    
+    steps:
+    - name: Questions
+      run: |
+        echo '
+          Questions?
+          ----------
         '
