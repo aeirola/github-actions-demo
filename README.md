@@ -1,3 +1,3 @@
-# github-actions-demo
+# github-actions-demo: NPM
 
-Exploration and demonstration of GitHub Actions
+Example of npm package
