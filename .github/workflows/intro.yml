@@ -105,6 +105,8 @@ jobs:
             - Wouldn't be suprised if it was Turing complete
           - Haven't looked into writing my own custom actions yet
             - Maybe a separate talk for that?
+          - No cache support
+            - Might have docker image caching
         "
     - name: Would I use it?
       run: |
