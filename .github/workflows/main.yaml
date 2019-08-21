@@ -1,0 +1,20 @@
+name: Docker
+
+on:
+  pull_request:
+    branches:
+      - docker
+  push:
+    branches:
+      - docker
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - run: docker build . --file Dockerfile --tag github-actions-demo:$GITHUB_SHA
+      - run: docker login docker.pkg.github.com -u aeirola -p '${{ secrets.GITHUB_TOKEN }}'
+      - run: docker tag github-actions-demo:$GITHUB_SHA docker.pkg.github.com/aeirola/github-actions-demo/github-actions-demo:$GITHUB_SHA
+      - run: docker push docker.pkg.github.com/aeirola/github-actions-demo/github-actions-demo:$GITHUB_SHA
