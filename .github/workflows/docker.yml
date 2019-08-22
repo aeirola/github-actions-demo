@@ -13,3 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: docker://supertest2014/nyan
+    timeout-minutes: 1
