@@ -1,0 +1,16 @@
+name: Docker action
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  nyan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://supertest2014/nyan
+    timeout-minutes: 1
