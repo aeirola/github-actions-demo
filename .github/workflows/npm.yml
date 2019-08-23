@@ -1,11 +1,16 @@
 name: NPM
 
 on:
-  pull_request:
-    branches:
-      - npm
   push:
     branches:
+      # Run on push to npm branch
+      - npm
+   tags:
+      # Run on push to tags
+    - 'v*'
+  pull_request:
+    branches:
+      # Run on PRs that target npm branch
       - npm
 
 jobs:
@@ -13,16 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['10', '8']
+        # Run whole job on both versions 10 and 12 of node
+        node: ['12', '10']
     steps:
+      # Get code
       - uses: actions/checkout@v1
+      # Get node
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
+      # Install deps
       - run: npm ci
+      # Run tests
       - run: npm test
 
   publish:
+    # Only run after successful build
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -32,9 +43,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@aeirola'
-      - run: npm login --registry=https://npm.pkg.github.com/ --scope=@aeirola
-        env:
-          NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm publish
+        # Only publish on tags
+        if: startsWith(github.ref, 'refs/tags/v')
         env:
           NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
