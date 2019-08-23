@@ -45,7 +45,7 @@ jobs:
           - GitHubs new CI/CD feature for running code on repository activity
           - Currently in limited public Beta
           - Supports Linux, macOS and Windows runtimes
-          - So not docker based
+          - So not docker based, but has good docker support
           - I have the feeling that Microsoft is somehow behind this
             - There is at least a lot of TypeScript in the repos
           - Apparently, it is also a handy tool for writing weeklies presentations!
@@ -65,8 +65,9 @@ jobs:
       run: |
         echo "
           - In short: Yes!
-          - But GitHub is the defacto opensource repository
-          - Who would make a PR for a npm package hosted elsewhere?
+          - But GitHub is the de-facto place for open source repos
+          - So I think this will be really popular for open source projects
+            - Microsoft probably hopes that as well
         "
   thoughts:
     name: Thoughts    
@@ -112,9 +113,11 @@ jobs:
     - name: Would I use it?
       run: |
         echo "
-          - Yeah, most likely
+          - Yeah!
+            - Definitely for publishing npm packages
+            - Maybe for some client projets as well, after it is out of beta
           - Feels nicer than Travis. (Poor Travis)
-          - Although I wonder how long this will be free
+          - But I wonder how long this will be free
         "
     - name: Conclusion
       run: |
