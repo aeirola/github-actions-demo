@@ -5,9 +5,9 @@ on:
     branches:
       # Run on push to npm branch
       - npm
-   tags:
+    tags:
       # Run on push to tags
-    - 'v*'
+      - 'v*'
   pull_request:
     branches:
       # Run on PRs that target npm branch
